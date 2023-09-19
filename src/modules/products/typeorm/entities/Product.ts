@@ -1,11 +1,17 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm'
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
-@Entity({name: 'products'})
+@Entity({ name: 'products' })
 export default class Product {
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string;
 
-  @Column({name: 'name'})
+  @Column({ name: 'name' })
   name: string;
 
   @Column({ type: 'decimal', name: 'price' })
