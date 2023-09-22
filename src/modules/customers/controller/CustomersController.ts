@@ -5,7 +5,7 @@ import CreateCustomerService from '../service/CreateCustomerService';
 import UpdateCustomerService from '../service/UpdateCustomerService';
 import DeleteCustomerService from '../service/DeleteCustomerService';
 
-export default class customersController {
+export default class CustomersController {
   public async index(req: Request, res: Response): Promise<Response> {
     const listCustomers = new ListCustomerService();
 
@@ -14,12 +14,12 @@ export default class customersController {
     return res.json(customers);
   }
 
-  public async find(req: Request, res: Response): Promise<Response> {
+  public async show(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
-    const findCustomer = new ShowCustomerService();
+    const showCustomer = new ShowCustomerService();
 
-    const customer = await findCustomer.execute({ id });
+    const customer = await showCustomer.execute({ id });
 
     return res.json(customer);
   }
